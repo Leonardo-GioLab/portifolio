@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="giolab.css">
+    <title>GioLab | Soluções em Tecnologia</title>
+    <style>
+        .hero-section{
+            min-height: 60vh;
+            background:
+            linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),
+            url("image/desenvolvimento.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .service-card i{
+            font-size: 3rem;
+            padding: 0;
+        }
+        .card-body h5{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .card-body h5, .card-body p{
+            padding: 8px 0;
+        }
+        .service-one{
+            transition: .2s;
+            box-shadow: 0 0 15px #0073ffc5;
+        }
+        .service-two{
+            transition: .2s;
+            box-shadow: 0 0 15px #0073ffc5;
+        }
+        .service-card:hover{
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #2a2a2ac5;
+            
+        }
+        /* MOBILE */
+        @media (max-width: 768px){
+
+            .hero-section{
+                min-height: 60vh;
+                padding: 80px 20px;
+                margin-top: 45px;
+                background:
+                linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),
+                url("image/websites.jpg");
+                background-size: cover;
+                background-position: top center;
+            }
+        }
+        .project-card{
+        transition:0.3s;
+        }
+        .project-card:hover{
+        transform:translateY(-5px);
+        box-shadow:0 15px 30px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- NAVBAR -->
+    <header>
+        <nav id="navbar" class="fixed w-full top-0 z-50 backdrop-blur-md bg-black/80 border-b border-gray-800">
+            <div class="container mx-auto flex items-center justify-between px-4 py-2">
+                <!-- LOGO -->
+                <a href="index.html" class="">
+                    <img src="image/logo_sf.png" class="logo w-[65px]" alt="">
+                </a>
+                <!-- MENU DESKTOP -->
+                <ul class="hidden lg:flex gap-8 text-gray-300 font-medium">
+                    <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                    <li><a href="#projeto" class="hover:text-white transition">Projetos</a></li>
+                    <li><a href="#servicos" class="hover:text-white transition">Serviços</a></li>
+                    <li><a href="#pacotes" class="hover:text-white transition">Pacotes</a></li>
+                    <li><a href="#sobre" class="hover:text-white transition">Sobre</a></li>
+                    <li><a href="#contato" class="hover:text-white transition">Contato</a></li>
+                </ul>
+                <!-- BOTÃO WHATSAPP -->
+                <div class="hidden lg:block">
+                    <a href="https://wa.me/559999999999"
+                    class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition">
+                        WhatsApp
+                    </a>
+                </div>
+
+                <!-- BOTÃO MOBILE -->
+                <button id="menuBtn" class="lg:hidden text-white text-3xl">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </nav>       
+    </header>
+    <!-- NAVBAR MOBILE -->
+    <div id="menuOverlay" class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+    <div id="mobileMenu" class="fixed top-0 right-0 w-40 h-full bg-black text-white transform translate-x-full transition-transform duration-300 z-50">
+        <div class="p-6">
+            <div class="flex justify-end">
+                <button id="closeMenu" class="text-white text-3xl">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>           
+            <ul class="space-y-4">
+                <li><a href="#home" class="block hover:text-blue-400 py-2">Home</a></li>
+                <li><a href="#servicos" class="block hover:text-blue-400 py-2">Serviços</a></li>
+                <li><a href="#projeto" class="hover:text-white transition">Projetos</a></li>
+                <li><a href="#pacotes" class="block hover:text-blue-400 py-2">Pacotes</a></li>
+                <li><a href="#sobre" class="block hover:text-blue-400 py-2">Sobre</a></li>
+                <li><a href="#footer" class="block hover:text-blue-400 py-2">Contato</a></li>
+            </ul>
+            <!-- <a href="https://wa.me/559999999999"class="block mt-4 bg-green-500 text-center py-2 rounded">Falar no WhatsApp</a> -->
+        </div> 
+    </div>
+
+    <!-- HERO -->
+    <section id="home" class="hero-section text-white d-flex align-items-center">
+    </section>
+
+        <!-- Serviços -->
+    <section id="servicos" class="py-5">
+        <!-- INTERFACE DOS MODAIS -->
+        <div class="container">
+            <h2 class="text-3xl font-semibold mb-8 text-center text-blue-900">Serviços</h2>
+            <div class="row g-4 px-2">
+                <!-- CARD 1  FORMATAÇÃO-->
+                <div class="col-md-4">
+                    <div class="card service-card service-one  text-center  h-100">
+                        <i class="bi bi-hdd  card-header bg-primary text-white rounded"></i>
+                        <div class="card-body text-center">
+                            <h5>Formatação e Otimização</h5>
+                            <p class="text-muted">
+                                Instalação de sistema, drivers e otimização completa do computador.
+                            </p>
+                            <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#modalFormatacao">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD 2 SEGURANCA-->
+                <div class="col-md-4">
+                    <div class="card service-card service-two text-center h-100">
+                        <i class="bi bi-shield-lock card-header bg-primary text-white rounded"></i>
+                        <div class="card-body text-center">
+                            <h5>Segurança Digital</h5>
+                            <p class="text-muted">
+                                Proteção contra vírus, malware e melhoria da segurança da rede.
+                            </p>
+                            <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#modalSeguranca">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD 3 REDES-->
+                <div class="col-md-4">
+                    <div class="card service-card service-one text-center  h-100">
+                        <i class="bi bi-diagram-3 card-header bg-primary text-white rounded"></i>
+                        <div class="card-body text-center">
+                            <h5>Infraestrutura de Redes</h5>
+                            <p class="text-muted">
+                                Elaboração e projetos para infraestrutura de sua empresa.
+                            </p>
+                            <button class="btn btn-primary mt-2" data-bs-toggle="modal"d ata-bs-target="#modalRedes">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD 4 CONSULTORIA-->
+                <div class="col-md-4">
+                    <div class="card service-card service-two text-center  h-100">
+                        <i class="bi bi-code-slash card-header bg-primary text-white rounded"></i>
+                        <div class="card-body text-center">
+                            <h5>Consultoria em TI</h5>
+                            <P class="text-muted">
+                                Consultoria para planejar, implementar e otimizar soluções tecnológicas.
+                            </P>
+                            <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalConsultoria">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD 5 SUPORTE -->
+                <div class="col-md-4">
+                    <div class="card service-card service-one text-center  h-100">
+                        <i class="bi bi-headset card-header bg-primary text-white rounded"></i>
+                        <div class="card-body text-center">
+                            <h5>Suporte Técnico</h5>
+                            <p class="text-muted">
+                                Atendimento rápido e eficiente para resolver problemas de hardware, software e redes.
+                            </p>
+                            <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalSuporte">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD 6 DEV-->
+                <div class="col-md-4">
+                    <div class="card service-card service-two text-center h-100">
+                        <i class="bi bi-code-slash card-header bg-primary text-white rounded"></i>
+                        <div class="card-body text-center">
+                            <h5>Desenvolvimento Web</h5>
+                            <p class="text-muted">
+                                Criação de sites profissionais e sistemas web personalizados.
+                            </p>
+                            <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalDev">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAIS -->
+        <div class="modal fade" id="modalFormatacao">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0 pb-0">
+                        <h5 class="modal-title fw-bold fs-4 text-primary">
+                            Formatação e Otimização
+                        </h5>
+                        <button class="btn-close close-circle" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body pt-2">
+                        <hr class="mb-4">
+                        <ul class="service-list mb-4">
+                            <li>Formatação de computadores e notebooks</li>
+                            <li>Instalação de Windows ou Linux</li> 
+                            <li>Drivers atualizados</li>
+                            <li>Instalação de programas</li>
+                            <li>Otimização do sistema</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="https://wa.me/5598984511705" class="btn btn-success">
+                                Solicitar serviço
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalSeguranca">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0 pb-0">
+                        <h5 class="modal-title fw-bold fs-4 text-primary">
+                            Segurança Digital
+                        </h5>
+                        <button class="btn-close close-circle" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body pt-2">
+                        <hr class="mb-4">
+                        <ul class="service-list mb-4">
+                            <li>Remoção de vírus e malware</li>
+                            <li>Configuração de antivírus</li> 
+                            <li>Proteção de redes Wi-Fi</li>
+                            <li>Auditoria de segurança básica</li>
+                            <li>Otimização de Tráfego de redes</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="https://wa.me/5598984511705" class="btn btn-success px-4 py-2">
+                                Solicitar serviço
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalRedes">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0 pb-0">
+                        <h5 class="modal-title fw-bold fs-4 text-primary">
+                            Infraestrutura e Redes
+                        </h5>
+                        <button class="btn-close close-circle" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body pt-2">
+                        <hr class="mb-4">
+                        <ul class="service-list mb-4">
+                            <li>Instalação e configuração de redes</li>
+                            <li>Montagem de servidores locais</li> 
+                            <li>Software e serviços para  conectividade</li>
+                            <li>Organização de cabeamento de rede</li>
+                            <li>Configuração de roteadores e switches</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="https://wa.me/5598984511705" class="btn btn-success px-4 py-2">
+                                Solicitar serviço
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalConsultoria">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0 pb-0">
+                        <h5 class="modal-title fw-bold fs-4 text-primary">
+                            Consultoria em TI
+                        </h5>
+                        <button class="btn-close close-circle" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body pt-2">
+                        <hr class="mb-4">
+                        <ul class="service-list mb-4">
+                            <li>Planejamento de infraestrutura para empresas</li>
+                            <li>Análise e melhoria de sistemas</li> 
+                            <li>Implantação de sistemas e bancos de dados</li>
+                            <li>Suporte técnico para empresas</li>
+                            <li>Treinamentos e cursos para colaboradores</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="https://wa.me/5598984511705" class="btn btn-success px-4 py-2">
+                                Solicitar serviço
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalSuporte">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0 pb-0">
+                        <h5 class="modal-title fw-bold fs-4 text-primary">
+                            Suporte Técnico
+                        </h5>
+                        <button class="btn-close close-circle" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body pt-2">
+                        <hr class="mb-4">
+                        <ul class="service-list mb-4">
+                            <li>Atendimento remoto e presencial</li>
+                            <li>Diagnóstico e solução de problemas em computadores</li> 
+                            <li>Suporte para softwares e sistemas</li>
+                            <li>Atualização e manutenção preventiva</li>
+                            <li>Backup e recuperação de dados</li>
+                            <li>Limpeza e otimização do sistema</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="https://wa.me/5598984511705" class="btn btn-success px-4 py-2">
+                                Solicitar serviço
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalDev">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0 pb-0">
+                        <h5 class="modal-title fw-bold fs-4 text-primary">
+                            Desenvolvimento Web
+                        </h5>
+                        <button class="btn-close close-circle" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body pt-2">
+                        <hr class="mb-4">
+                        <ul class="service-list mb-4">
+                            <li>Desenvolvimento de sistemas web</li>
+                            <li>Criação de landing pages e páginas de vendas</li>
+                            <li>Manutenção e atualização de sites</li> 
+                            <li>Criação de sites profissionais</li>
+                            <li>Catálogos Online</li>
+                            <li></li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="https://wa.me/5598984511705" class="btn btn-success px-4 py-2">
+                                Solicitar serviço
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projeto" class="py-5 bg-gray-200">
+        <h2 class="text-3xl font-semibold mb-8 text-center text-blue-900">Meus Projetos</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
+            <!-- Project Card -->
+            <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <!-- <img src="image/GioLabCloud.jpg" alt="Projeto 2" class="rounded-t-lg w-full object-cover " /> -->
+                <!-- carousel -->
+                <div id="carouselGiolab" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="image/GioLabCloud_01.jpg" class="d-block w-100 rounded-t-lg" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="image/GioLabCloud_02.jpg" class="d-block w-100 rounded-t-lg" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="image/GioLabCloud_03.jpg" class="d-block w-100 rounded-t-lg" alt="...">
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselGiolab" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#carouselGiolab" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carouselGiolab" data-bs-slide-to="2"></button>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-2">Sistema de Gestão Financeira </h3>
+                    <p class="text-gray-600 mb-4 text_project">Sistema simples e eficiente para controle financeiro de igrejas, permitindo registrar entradas, saídas e acompanhar relatórios de forma organizada.</p>
+                    <a href="https://giolabcloud.netlify.app/login.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Visualizar projeto</a>
+                </div>
+            </article>
+            <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <!-- <img src="image/vendas.png" alt="Projeto 1"  class="rounded-t-lg w-full object-cover"/> -->
+                <!-- carousel -->
+                <div id="carouselVendas" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="image/vendas_01.png" class="d-block w-100 rounded-t-lg" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="image/vendas_02.jpg" class="d-block w-100 rounded-t-lg" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="image/vendas_03.jpg" class="d-block w-100 rounded-t-lg" alt="...">
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselVendas" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#carouselVendas" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carouselVendas" data-bs-slide-to="2"></button>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-2">Site para vendedor honda</h3>
+                    <p class="text-gray-600 mb-4">Site desenvolvido para apresentar veículos, facilitar o contato com clientes e apoiar o trabalho de vendas de forma simples e profissional.</p>
+                    <a href="https://hondaleo.netlify.app/" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Visualizar projeto</a>
+                </div>
+            </article>
+            <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <!-- <img src="image/online.png" alt="Projeto 3" class="rounded-t-lg w-full object-cover" /> -->
+                <!-- carousel -->
+                <div id="carouselOnline" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="image/online_01.png" class="d-block w-100 rounded-t-lg" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="image/online_02.jpg" class="d-block w-100 rounded-t-lg" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="image/online_03.jpg" class="d-block w-100 rounded-t-lg" alt="...">
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselOnline" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#carouselOnline" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carouselOnline" data-bs-slide-to="2"></button>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-2">Currículos e portifólio</h3>
+                    <p class="text-gray-600 mb-4">Serviço de criação de currículos online e portfólios profissionais, com design moderno para apresentar melhor suas habilidades e experiências..</p>
+                    <a href="https://leoonline.netlify.app/" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Visualizar projeto</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- PACOTES DE PREÇO -->
+    <section id="pacotes" class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Pacotes de Serviços</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card price-card shadow">
+                        <div class="card-body text-center">
+                            <h4>Básico</h4>
+                            <h2 class="text-success">R$80</h2>
+                            <ul class="list-unstyled mt-3">
+                                <li>Formatação</li>
+                                <li>Instalação de drivers</li>
+                                <li>Programas básicos</li>
+                            </ul>
+                            <button class="btn btn-outline-success mt-3">
+                                Contratar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-lg border-primary text-center">
+                        <div class="card-header bg-primary text-white">
+                            Mais Popular
+                        </div>
+                        <div class="card-body">
+                            <h4>Profissional</h4>
+                            <h2 class="text-primary">R$150</h2>
+                            <ul class="list-unstyled mt-3">
+                                <li>Formatação completa</li>
+                                <li>Programas essenciais</li>
+                                <li>Otimização</li>
+                                <li>Remoção de vírus</li>
+                            </ul>
+                            <button class="btn btn-primary mt-3">
+                                Contratar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card price-card shadow">
+                        <div class="card-body text-center">
+                            <h4>Empresarial</h4>
+                            <h2 class="text-danger">Sob consulta</h2>
+                            <ul class="list-unstyled mt-3">
+                                <li>Infraestrutura de rede</li>
+                                <li>Segurança digital</li>
+                                <li>Consultoria TI</li>
+                                <li>Suporte técnico</li>
+                            </ul>
+                            <button class="btn btn-danger mt-3">
+                                Solicitar
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="w-100 mt-5" 
+        style="background: linear-gradient(to right, #0f172a, #1b93d9, #0f172a); color: white; border-radius: 10px;">
+        <div class="container">
+
+            <!-- Linha principal: Títulos à esquerda | Logo e nome à direita -->
+            <div class="d-flex pt-4 flex-md-row justify-content-between justify-content-md-around align-items-start text-start gap-4">
+                <!-- DIREITA: Logo + Nome abaixo -->
+                <div class="d-flex flex-column align-items-center text-center ">
+                <!-- Logo -->
+                    <div style="
+                        width: 80px; 
+                        height: 80px; 
+                        background-image: url('./image/1.jpg'); 
+                        background-size: cover; 
+                        background-position: center; 
+                        border-radius: 10px; 
+                        border: 2px solid white;"
+                        class="footer_div_logo mb-2">
+                    </div>
+
+                    <!-- Redes Sociais -->
+                    <div class="d-flex justify-content-center gap-3 fs-4">
+                        <a href="https://wa.me/5598984511705?text=Olá%20Leonardo!" target="_blank" class="text-white hover-opacity" aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <a href="https://instagram.com/leonardoh_santos25" target="_blank" class="text-white hover-opacity" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- ESQUERDA: Títulos/Serviços com linha superior -->
+                <div class="d-flex flex-column gap-2 sr-10 gap-2 text-sm">
+                    <div style="border-top: 1px solid #ffffff80; padding-top: 6px;">Formatação e Otimização</div>
+                    <div style="border-top: 1px solid #ffffff80; padding-top: 6px;">Suporte   Técnico</div>
+                    <div style="border-top: 1px solid #ffffff80; padding-top: 6px;">Infraestrutura de Redes</div>
+                </div>
+                <div class="d-flex flex-column  gap-2 text-sm sr-10">
+                    <div style="border-top: 1px solid #ffffff80; padding-top: 6px;">Desenvolvimento Web</div>
+                    <div style="border-top: 1px solid #ffffff80; padding-top: 6px;">Consultoria em TI</div>
+                    <div style="border-top: 1px solid #ffffff80; padding-top: 6px;">Segurança Digital</div>
+                </div>
+            </div>
+
+            <!-- Linha final: Redes sociais e link do portfólio -->
+            <div class="d-flex justify-content-center w-100 mt-3 pb-2">
+                <div class="text-center">
+                    <small>
+                        Criado com: <a href="https://giolab.netlify.app/" class="text-decoration-underline text-white">GioLab Tecnologia</a>
+                    </small>
+                </div>
+            </div>
+
+
+        </div>
+         <div class="bg-black text-white text-center py-4 text-sm">
+                <p> 
+                    © 2026 GioLab Tecnologias | Soluções em Tecnologia
+                </p>
+            </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5598984511705" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48a11.72 11.72 0 00-16.56 0c-4.56 4.56-4.56 12 0 16.56a11.72 11.72 0 0016.56 0c4.56-4.56 4.56-12 0-16.56zm-8.06 16.36a8.5 8.5 0 01-4.49-1.32l-.29-.18-3.37.9.9-3.35-.19-.3a8.48 8.48 0 011.34-11.38 8.5 8.5 0 0112.04 12.05 8.46 8.46 0 01-5.83 2.28zm4.14-6.1c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.86-.13.15-.26.17-.48.06-.22-.11-.93-.34-1.78-1.1-.66-.59-1.1-1.3-1.23-1.52-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.64-.18-.44-.36-.38-.5-.39-.13-.01-.28-.01-.43-.01a.678.678 0 00-.49.23c-.16.15-.62.6-.62 1.46 0 .86.64 1.7.73 1.82.1.12 1.27 1.94 3.08 2.72.43.18.76.29 1.02.37.43.13.82.11 1.13.07.34-.04 1.3-.53 1.48-1.04.18-.5.18-.93.13-1.03-.04-.1-.2-.16-.42-.27z"/></svg>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
